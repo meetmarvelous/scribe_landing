@@ -5,7 +5,8 @@ export const RoadmapSection = () => {
       title: 'MVP Foundation',
       timeline: 'Current Release · Q4 2026',
       badge: 'Available / Beta',
-      badgeColor: 'bg-[#29C7B8]/10 text-[#0F766E] border-[#29C7B8]/30',
+      badgeColor: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+      dotColor: 'bg-emerald-500',
       items: [
         'Native Windows desktop shell (Tauri 2 + Rust backend)',
         'Local encrypted SQLite catalog & supplier registry',
@@ -21,7 +22,8 @@ export const RoadmapSection = () => {
       title: 'Connectors & Intelligence',
       timeline: 'Staged Rollout · Q1-Q2 2027',
       badge: 'In Development',
-      badgeColor: 'bg-[#4F7DFF]/10 text-[#4F7DFF] border-[#4F7DFF]/30',
+      badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
+      dotColor: 'bg-blue-500',
       items: [
         'Shopify Admin API two-way sync for products & tags',
         'Pressable & headless CMS auto-deployment pipelines',
@@ -36,7 +38,8 @@ export const RoadmapSection = () => {
       title: 'Autonomous Operations',
       timeline: 'Strategic Target · 2027+',
       badge: 'Planned Roadmap',
-      badgeColor: 'bg-[#F1F5F9] text-[#64748B] border-[#E2E8F0]',
+      badgeColor: 'bg-slate-100 text-slate-700 border-slate-200',
+      dotColor: 'bg-slate-400',
       items: [
         'Amazon SP-API & Walmart Marketplace adapters',
         'Multi-user team permissions & audit log synchronization',
@@ -49,20 +52,20 @@ export const RoadmapSection = () => {
   ];
 
   return (
-    <section id="roadmap" className="py-24 bg-white border-b border-[#E4E7EC] text-[#111A2E]">
+    <section id="roadmap" className="py-24 bg-white border-b border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E4E7EC] text-[11px] font-mono text-[#344054] uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4F7DFF]"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-xs font-mono text-blue-700 uppercase tracking-wider mb-4 font-semibold">
+            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
             <span>Transparent Roadmap</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111A2E] leading-tight mb-5 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5 font-sans">
             Deliberate milestones. Honest release status.
           </h2>
 
-          <p className="text-base sm:text-lg text-[#667085] leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             We distinguish tested, functioning software from roadmap aspirations. Review what is shipping in the current release versus future releases.
           </p>
         </div>
@@ -72,39 +75,39 @@ export const RoadmapSection = () => {
           {roadmapStages.map((stg) => (
             <div
               key={stg.phase}
-              className="bg-[#F7F8FA] border border-[#E4E7EC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#4F7DFF]/50 hover:bg-white hover:shadow-md transition-all group"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-blue-400 hover:bg-white hover:shadow-lg hover:shadow-blue-500/5 transition-all group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-semibold text-[#4F7DFF] px-2.5 py-1 rounded bg-white border border-[#E4E7EC]">
+                  <span className="font-mono text-xs font-bold text-blue-700 px-2.5 py-1 rounded-md bg-white border border-slate-200">
                     {stg.phase}
                   </span>
 
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded border font-medium ${stg.badgeColor}`}>
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md border font-bold ${stg.badgeColor}`}>
                     {stg.badge}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#111A2E] mb-1">
+                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
                   {stg.title}
                 </h3>
 
-                <span className="text-xs font-mono text-[#667085] block mb-6">
+                <span className="text-xs font-mono text-slate-500 block mb-6">
                   {stg.timeline}
                 </span>
 
                 {/* Items */}
-                <ul className="space-y-3 text-xs text-[#344054]">
+                <ul className="space-y-3 text-xs text-slate-700 font-medium">
                   {stg.items.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#4F7DFF] mt-1.5 shrink-0"></span>
+                      <span className={`w-1.5 h-1.5 rounded-full ${stg.dotColor} mt-1.5 shrink-0`}></span>
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-[#E4E7EC] text-[11px] font-mono text-[#64748B]">
+              <div className="pt-6 mt-6 border-t border-slate-200 text-[11px] font-mono text-slate-500">
                 {stg.phase === 'Phase 01' ? 'Ready for private testing' : 'Subject to technical discovery'}
               </div>
             </div>

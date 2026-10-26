@@ -36,7 +36,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8FA] text-[#111A2E] font-sans antialiased flex flex-col selection:bg-[#4F7DFF]/20 selection:text-[#4F7DFF]">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased flex flex-col selection:bg-blue-600/20 selection:text-blue-600">
       {/* Top Header / Navigation */}
       <Navbar onOpenEarlyAccess={handleOpenEarlyAccess} />
 

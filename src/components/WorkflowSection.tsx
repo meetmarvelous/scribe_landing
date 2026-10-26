@@ -21,29 +21,29 @@ export const WorkflowSection = () => {
   const icons = [Search, ShieldCheck, Calculator, FileEdit, UserCheck, Send, BarChart2];
 
   return (
-    <section id="workflow" className="py-24 bg-white border-b border-[#E4E7EC] text-[#111A2E]">
+    <section id="workflow" className="py-24 bg-white border-b border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E4E7EC] text-[11px] font-mono text-[#344054] uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#29C7B8]"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-50 border border-teal-200 text-xs font-mono text-teal-800 uppercase tracking-wider mb-4 font-semibold">
+            <span className="w-2 h-2 rounded-full bg-teal-600"></span>
             <span>The Connected Workflow</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111A2E] leading-tight mb-5 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5 font-sans">
             From product signal to publish-ready opportunity.
           </h2>
 
-          <p className="text-base sm:text-lg text-[#667085] leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Seven disciplined steps inside one desktop application. No fragile copy-pasting, disconnected spreadsheets, or unmonitored scripts.
           </p>
         </div>
 
-        {/* 7-Step Horizontal Stepper on Desktop / Scrollable on Tablet */}
+        {/* 7-Step Horizontal Stepper */}
         <div className="mb-10 overflow-x-auto pb-4 pt-2">
           <div className="min-w-[800px] flex items-center justify-between relative">
             {/* Connecting Baseline */}
-            <div className="absolute top-5 left-6 right-6 h-[2px] bg-[#E4E7EC] -z-0" />
+            <div className="absolute top-5 left-6 right-6 h-[2px] bg-slate-200 -z-0" />
 
             {WORKFLOW_STAGES.map((stage, idx) => {
               const Icon = icons[idx];
@@ -54,31 +54,31 @@ export const WorkflowSection = () => {
                 <button
                   key={stage.id}
                   onClick={() => setActiveStepIndex(idx)}
-                  className="flex flex-col items-center group relative z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F7DFF] rounded-lg p-2"
+                  className="flex flex-col items-center group relative z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-xl p-2 cursor-pointer"
                 >
                   {/* Step Node Circle */}
                   <div
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono text-xs font-semibold transition-all duration-200 border ${
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center font-mono text-xs font-bold transition-all duration-200 border ${
                       isActive
-                        ? 'bg-[#4F7DFF] text-white border-[#4F7DFF] shadow-md shadow-[#4F7DFF]/25 scale-110'
+                        ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/30 scale-110'
                         : isPast
-                        ? 'bg-[#111A2E] text-[#29C7B8] border-[#111A2E]'
-                        : 'bg-white text-[#667085] border-[#E4E7EC] group-hover:border-[#94A3B8]'
+                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                        : 'bg-white text-slate-600 border-slate-300 group-hover:border-slate-400 group-hover:bg-slate-50'
                     }`}
                   >
-                    {isPast ? <Check className="w-4 h-4 text-[#29C7B8]" /> : <Icon className="w-4 h-4" />}
+                    {isPast ? <Check className="w-5 h-5 text-white" /> : <Icon className="w-5 h-5" />}
                   </div>
 
                   {/* Step Name */}
                   <div className="mt-2 text-center">
                     <span
-                      className={`block text-xs font-semibold ${
-                        isActive ? 'text-[#4F7DFF]' : 'text-[#344054] group-hover:text-[#111A2E]'
+                      className={`block text-xs font-bold ${
+                        isActive ? 'text-blue-600' : 'text-slate-800 group-hover:text-blue-600'
                       }`}
                     >
                       {stage.name}
                     </span>
-                    <span className="text-[10px] text-[#667085] font-mono block">
+                    <span className="text-[10px] text-slate-500 font-mono block">
                       {stage.subtitle}
                     </span>
                   </div>
@@ -88,21 +88,21 @@ export const WorkflowSection = () => {
           </div>
         </div>
 
-        {/* Dynamic Detail Card for Selected Stage */}
-        <div className="bg-[#0B1020] border border-[#1E283D] rounded-2xl overflow-hidden shadow-xl text-white">
+        {/* Dynamic Detail Card in Vibrant Light Theme */}
+        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 text-slate-900">
           {/* Header of Detail Card */}
-          <div className="bg-[#111A2E] border-b border-[#1E283D] px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-blue-50/80 via-indigo-50/50 to-slate-50 border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs px-2.5 py-1 rounded bg-[#4F7DFF]/20 text-[#4F7DFF] border border-[#4F7DFF]/40">
+              <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-blue-600 text-white font-bold">
                 STAGE 0{currentStage.step} OF 07
               </span>
-              <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-wide">
                 {currentStage.name} — {currentStage.subtitle}
               </h3>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-[#94A3B8]">
-              <span className="w-2 h-2 rounded-full bg-[#29C7B8]"></span>
+            <div className="flex items-center gap-2 text-xs font-mono text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 font-semibold">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span>{currentStage.actionLabel}</span>
             </div>
           </div>
@@ -112,34 +112,34 @@ export const WorkflowSection = () => {
             {/* Description & System Logic */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
                   {currentStage.description}
                 </p>
 
-                <div className="bg-[#141C30] border border-[#1E283D] rounded-xl p-4 mb-6">
-                  <div className="text-[11px] font-mono uppercase text-[#4F7DFF] tracking-wider mb-1.5 flex items-center gap-1.5">
-                    <Terminal className="w-3.5 h-3.5" />
+                <div className="bg-blue-50/80 border border-blue-200 rounded-xl p-4 mb-6">
+                  <div className="text-[11px] font-mono uppercase text-blue-800 font-bold tracking-wider mb-1.5 flex items-center gap-1.5">
+                    <Terminal className="w-3.5 h-3.5 text-blue-600" />
                     <span>Workspace Orchestration</span>
                   </div>
-                  <p className="text-xs text-white/90 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed font-medium">
                     {currentStage.systemAction}
                   </p>
                 </div>
               </div>
 
               {/* Step Navigation Controls */}
-              <div className="flex items-center gap-3 pt-4 border-t border-[#1E283D]">
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
                 <button
                   disabled={activeStepIndex === 0}
                   onClick={() => setActiveStepIndex((prev) => Math.max(0, prev - 1))}
-                  className="px-3.5 py-2 text-xs font-mono rounded-lg bg-[#111A2E] border border-[#1E283D] text-[#94A3B8] hover:text-white disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                  className="px-3.5 py-2 text-xs font-mono font-semibold rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-200 disabled:opacity-40 disabled:pointer-events-none transition-colors"
                 >
                   ← Previous Stage
                 </button>
                 <button
                   disabled={activeStepIndex === WORKFLOW_STAGES.length - 1}
                   onClick={() => setActiveStepIndex((prev) => Math.min(WORKFLOW_STAGES.length - 1, prev + 1))}
-                  className="px-3.5 py-2 text-xs font-mono rounded-lg bg-[#4F7DFF] text-white hover:bg-[#3D6BEB] disabled:opacity-40 disabled:pointer-events-none transition-colors flex items-center gap-1.5"
+                  className="px-4 py-2 text-xs font-mono font-bold rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-40 disabled:pointer-events-none transition-colors flex items-center gap-1.5 shadow-sm shadow-blue-500/20"
                 >
                   <span>Next Stage</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -148,41 +148,43 @@ export const WorkflowSection = () => {
             </div>
 
             {/* Interactive Data Execution Panel */}
-            <div className="lg:col-span-7 bg-[#0F172A] border border-[#1E283D] rounded-xl p-5 space-y-4 font-mono">
-              <div className="flex items-center justify-between pb-3 border-b border-[#1E283D] text-xs">
-                <span className="text-[#64748B] flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-[#4F7DFF]" />
+            <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4 font-mono">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-200 text-xs">
+                <span className="text-slate-600 font-semibold flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 text-blue-600" />
                   <span>Execution Snapshot</span>
                 </span>
-                <span className="text-[#29C7B8] text-[11px]">Audit Policy: Enforced</span>
+                <span className="text-emerald-700 font-bold text-[11px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Audit Policy: Enforced
+                </span>
               </div>
 
               {/* Sample Input */}
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-[#64748B] mb-1">
+                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-1">
                   Step Input
                 </div>
-                <div className="p-3 bg-[#0B1020] border border-[#1E283D] rounded-lg text-xs text-[#94A3B8]">
+                <div className="p-3 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 shadow-xs">
                   {currentStage.sampleInput}
                 </div>
               </div>
 
               {/* Sample Output */}
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-[#64748B] mb-1">
+                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-1">
                   Validated Output
                 </div>
-                <div className="p-3 bg-[#0B1020] border border-[#1E283D] rounded-lg text-xs text-white">
+                <div className="p-3 bg-white border border-slate-200 rounded-lg text-xs text-blue-900 font-semibold shadow-xs">
                   {currentStage.sampleOutput}
                 </div>
               </div>
 
               {/* Audit Proof Trail */}
               <div>
-                <div className="text-[10px] uppercase tracking-wider text-[#64748B] mb-1">
+                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-1">
                   Cryptographic Provenance & Evidence Record
                 </div>
-                <div className="p-2.5 bg-[#111A2E]/80 border border-[#23314F] rounded-lg text-[11px] text-[#29C7B8]/90">
+                <div className="p-2.5 bg-emerald-50/90 border border-emerald-200 rounded-lg text-[11px] text-emerald-900 font-medium">
                   {currentStage.auditEvidence}
                 </div>
               </div>

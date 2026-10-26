@@ -5,31 +5,35 @@ export const CapabilityStrip = () => {
     {
       icon: Search,
       title: 'Discover',
-      tagline: 'Product & Market Opportunities',
+      tagline: 'Product & Market Signals',
       desc: 'Ingest and evaluate product candidates across authorized supplier feeds, user imports, and search signals.',
+      colorClasses: 'bg-blue-50 text-blue-600 border-blue-200',
     },
     {
       icon: Calculator,
       title: 'Evaluate',
       tagline: 'Source Evidence & True Costs',
       desc: 'Model landed costs, supplier minimum orders, and net contribution margins before allocating capital.',
+      colorClasses: 'bg-emerald-50 text-emerald-600 border-emerald-200',
     },
     {
       icon: Send,
       title: 'Publish',
       tagline: 'Product & Editorial Content',
       desc: 'Draft structured specifications, comparison guides, and dispatch directly to configured WordPress endpoints.',
+      colorClasses: 'bg-indigo-50 text-indigo-600 border-indigo-200',
     },
     {
       icon: TrendingUp,
       title: 'Optimise',
       tagline: 'Workflows & Performance',
       desc: 'Monitor real commercial outcomes with audited agent runs, approval gates, and decoupled attribution.',
+      colorClasses: 'bg-amber-50 text-amber-600 border-amber-200',
     },
   ];
 
   return (
-    <section className="bg-[#111A2E] border-y border-[#1E283D] py-10 relative z-20">
+    <section className="bg-white border-y border-slate-200 py-10 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {capabilities.map((cap) => {
@@ -37,18 +41,18 @@ export const CapabilityStrip = () => {
             return (
               <div
                 key={cap.title}
-                className="flex items-start gap-4 p-4 rounded-xl bg-[#0B1020]/50 border border-[#1E283D]/80 hover:border-[#4F7DFF]/40 transition-colors"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50/80 border border-slate-200 hover:border-blue-400 hover:bg-white hover:shadow-md transition-all group"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#162038] border border-[#23314F] flex items-center justify-center shrink-0 text-[#4F7DFF]">
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border shadow-xs ${cap.colorClasses}`}>
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm font-semibold text-white tracking-wide">{cap.title}</span>
-                    <span className="text-[#64748B] text-xs">/</span>
-                    <span className="text-xs font-mono text-[#94A3B8]">{cap.tagline}</span>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-sm font-bold text-slate-900 tracking-wide">{cap.title}</span>
+                    <span className="text-slate-300 text-xs">/</span>
+                    <span className="text-[11px] font-mono text-slate-500 font-medium">{cap.tagline}</span>
                   </div>
-                  <p className="text-xs text-[#94A3B8] leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {cap.desc}
                   </p>
                 </div>

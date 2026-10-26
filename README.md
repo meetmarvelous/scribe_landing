@@ -7,15 +7,14 @@ A modern, responsive, enterprise-grade landing page for the **SCRIBE Windows Des
 ### 1. Zero AI Gimmicks
 - **No Emojis as Icons:** All visual symbology utilizes crisp, pixel-perfect Lucide SVG stroke icons.
 - **No Generic Oval Pill Spam:** Eliminates floating capsule badges and generic sparkle icons. Instead, uses structured, architectural labels (`font-mono`, `border`, `rounded-md`/`rounded-lg`) matching high-end developer and financial terminals (Linear, Bloomberg, Stripe, Raycast).
-- **Restrained Editorial Palette:** Strict adherence to the specification palette:
-  - Ink / Midnight: `#0B1020`
-  - Deep Navy: `#111A2E`
-  - Slate: `#344054`
-  - Off-White: `#F7F8FA`
-  - Electric Blue: `#4F7DFF` (Primary action)
-  - Teal Accent: `#29C7B8` (Verification, margins, and positive telemetry)
-  - Soft Violet: `#8B7CFF` (Agent orchestration telemetry, used sparingly)
-  - Muted Slate: `#667085` / `#94A3B8`
+- **Vibrant, Clean Light Theme Palette (Zero Dark Purple):**
+  - Crisp White & Off-White: `#FFFFFF` / `#F8FAFC` / `#F1F5F9`
+  - Deep Navy Slate: `#0F172A` / `#334155` for high-contrast typography
+  - Vivid Electric Blue & Cobalt: `#2563EB` (Primary action, active focus)
+  - Rich Emerald & Teal: `#059669` / `#0D9488` (Verification, contribution margins, live status)
+  - Solar Amber & Warm Gold: `#D97706` / `#F59E0B` (Sourcing, alerts, and tier badges)
+  - Deep Indigo & Sky Blue: `#4F46E5` / `#0284C7` (Content studio & system connectors)
+  - Crisp Subtle Borders: `#E2E8F0` / `#CBD5E1`
 - **Honest Claims & Provenance:** No fabricated metrics, testimonials, or claims of guaranteed sales. Clear labeling of release stages (`Available in MVP`, `In Development`, `Planned`).
 
 ### 2. High-Fidelity Windows Desktop Mockups

@@ -10,20 +10,20 @@ export const FaqSection = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#F7F8FA] border-b border-[#E4E7EC] text-[#111A2E]">
+    <section id="faq" className="py-24 bg-slate-50 border-b border-slate-200 text-slate-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E4E7EC] text-[11px] font-mono text-[#344054] uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4F7DFF]"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-xs font-mono text-blue-700 uppercase tracking-wider mb-4 font-semibold">
+            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
             <span>Frequently Answered Questions</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111A2E] leading-tight mb-5 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5 font-sans">
             Technical & operational clarity.
           </h2>
 
-          <p className="text-base text-[#667085] leading-relaxed">
+          <p className="text-base text-slate-600 leading-relaxed">
             Straightforward answers regarding architecture, security, automation limits, and data ownership.
           </p>
         </div>
@@ -35,25 +35,27 @@ export const FaqSection = () => {
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#E4E7EC] rounded-2xl overflow-hidden transition-colors"
+                className="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all shadow-xs"
               >
                 <button
                   onClick={() => toggleItem(idx)}
-                  className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 hover:bg-[#F7F8FA]/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F7DFF]"
+                  className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 hover:bg-slate-50/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-base font-semibold text-[#111A2E]">
+                  <span className={`text-sm sm:text-base font-bold transition-colors ${
+                    isOpen ? 'text-blue-600' : 'text-slate-900'
+                  }`}>
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#667085] shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-[#4F7DFF]' : ''
+                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-blue-600' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-[#667085] leading-relaxed border-t border-[#F1F5F9]">
+                  <div className="px-6 pb-6 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100 font-medium">
                     {faq.answer}
                   </div>
                 )}
