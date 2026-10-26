@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#0B1020"/>
+  <rect x="1" y="1" width="30" height="30" rx="6" stroke="#1E283D" stroke-width="1"/>
+  <!-- Structured geometric SCRIBE S/corner fold arrow mark -->
+  <path d="M9 10C9 8.89543 9.89543 8 11 8H20L23 11V14C23 15.1046 22.1046 16 21 16H13C11.8954 16 11 16.8954 11 18V21C11 22.1046 11.8954 23 13 23H22" stroke="#4F7DFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 8V12H23" stroke="#29C7B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22" cy="23" r="1.5" fill="#29C7B8"/>
+</svg>
